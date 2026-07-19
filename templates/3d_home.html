@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>3D Smart Home Visualization</title>
+
+<style>
+
+body{
+
+    margin:0;
+    overflow:hidden;
+    background:#e5e5e5;
+
+}
+
+
+h1{
+
+    position:absolute;
+    top:15px;
+    width:100%;
+    text-align:center;
+    font-family:Arial;
+    color:#222;
+    z-index:10;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>🏠 AI Smart Home 3D Visualization</h1>
+
+
+
+<!-- Three.js -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+
+<!-- Orbit Controls -->
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+
+
+<!-- Flask Values -->
+
+<script>
+
+const bedrooms = Number("{{ bedrooms | default(2) }}");
+
+const bathrooms = Number("{{ bathrooms | default(1) }}");
+
+const floors = Number("{{ floors | default(1) }}");
+
+
+console.log(
+    "Bedrooms:",
+    bedrooms,
+    "Bathrooms:",
+    bathrooms,
+    "Floors:",
+    floors
+);
+
+</script>
+
+
+
+<!-- 3D Script -->
+
+<script src="{{ url_for('static', filename='3d_home.js') }}"></script>
+
+
+
+</body>
+
+</html>
