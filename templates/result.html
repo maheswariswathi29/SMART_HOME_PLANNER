@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Construction Cost Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+.action-buttons{
+
+    margin-top:30px;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 25px;
+
+    margin:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+}
+
+
+.btn:hover{
+
+    background:#111827;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container result-box">
+
+
+<h1>🏠 Construction Cost Report</h1>
+
+
+
+<h2>Total Estimated Cost</h2>
+
+
+
+<div class="cost">
+
+₹ {{ cost }}
+
+</div>
+
+
+
+
+<div class="details">
+
+
+<h3>Cost Breakdown</h3>
+
+
+
+<p>
+
+🏗 Material Cost:
+
+<b>₹ {{ material }}</b>
+
+</p>
+
+
+
+<p>
+
+👷 Labour Cost:
+
+<b>₹ {{ labour }}</b>
+
+</p>
+
+
+
+<p>
+
+🎨 Finishing Cost:
+
+<b>₹ {{ finishing }}</b>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="action-buttons">
+
+
+
+<!-- 2D Layout Button -->
+
+<form action="/layout" method="POST">
+
+
+<input type="hidden" name="bedrooms" value="{{ bedrooms }}">
+
+
+<input type="hidden" name="bathrooms" value="{{ bathrooms }}">
+
+
+<input type="hidden" name="floors" value="{{ floors }}">
+
+
+
+<button class="btn" type="submit">
+
+📐 Generate Vastu 2D Layout
+
+</button>
+
+
+
+</form>
+
+
+
+
+
+<!-- Direct 3D Button -->
+
+<a 
+href="/3d?bedrooms={{bedrooms}}&bathrooms={{bathrooms}}&floors={{floors}}" 
+class="btn">
+
+🏠 View 3D Home Design
+
+</a>
+
+
+
+
+<a href="/" class="btn">
+
+🔄 Predict Again
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
