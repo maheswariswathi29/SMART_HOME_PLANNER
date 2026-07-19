@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Vastu Based 2D Layout</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+
+<style>
+
+.button{
+
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:#111827;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    font-family:Arial;
+
+}
+
+
+.button:hover{
+
+    background:#2563eb;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>🏠 Vastu Based 2D Home Layout</h1>
+
+
+<div class="direction">
+
+⬆️ NORTH
+
+</div>
+
+
+
+<div class="floor-plan">
+
+
+{% for direction, room in layout.items() %}
+
+<div class="room">
+
+<h3>{{direction}}</h3>
+
+<p>{{room}}</p>
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+<!-- 3D Button -->
+
+<a href="/3d?bedrooms={{bedrooms}}&bathrooms={{bathrooms}}&floors={{floors}}" 
+class="button">
+
+🏠 View 3D Home Design
+
+</a>
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
