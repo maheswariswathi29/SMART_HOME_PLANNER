@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vastu Analysis Report</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <h1>🧭 Vastu Analysis Report</h1>
+
+
+    <div class="result-card">
+
+        <h2>Vastu Score</h2>
+
+        <div class="score">
+
+            {{score}} / 100
+
+        </div>
+
+
+        {% if score >= 80 %}
+
+            <h3>✅ Excellent Vastu Plan</h3>
+
+        {% elif score >= 60 %}
+
+            <h3>👍 Good Vastu Plan</h3>
+
+        {% else %}
+
+            <h3>⚠️ Improvements Required</h3>
+
+        {% endif %}
+
+
+    </div>
+
+
+
+    <div class="suggestions">
+
+
+        <h2>📌 Suggestions</h2>
+
+
+        {% if suggestions %}
+
+            <ul>
+
+            {% for item in suggestions %}
+
+                <li>{{item}}</li>
+
+            {% endfor %}
+
+            </ul>
+
+
+        {% else %}
+
+            <p>
+                🎉 Your home plan follows major Vastu guidelines.
+            </p>
+
+        {% endif %}
+
+
+    </div>
+
+
+
+    <a href="/" class="button">
+
+        Back to Home
+
+    </a>
+
+
+
+</div>
+
+
+</body>
+
+</html>
