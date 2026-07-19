@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Smart Home Planner</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>🏠 AI Smart Home Planner</h1>
+
+
+<p>
+AI Based Construction Cost Prediction + Vastu + 2D Layout + 3D Visualization
+</p>
+
+
+
+
+<!-- ===============================
+     COST PREDICTION FORM
+================================ -->
+
+
+<h2>💰 Construction Cost Prediction</h2>
+
+
+<form action="/predict" method="POST">
+
+
+
+<label>Location</label>
+
+<select name="location">
+
+<option>Gajuwaka</option>
+<option>Madhurawada</option>
+<option>MVP Colony</option>
+<option>Seethammadhara</option>
+<option>Pendurthi</option>
+<option>Kommadi</option>
+<option>Anandapuram</option>
+<option>Bheemili</option>
+<option>Tagarapuvalasa</option>
+<option>Sabbavaram</option>
+<option>Parawada</option>
+<option>Padmanabham</option>
+<option>Rambilli</option>
+<option>Atchutapuram</option>
+<option>Kothavalasa</option>
+
+</select>
+
+
+
+
+<label>House Area (sqft)</label>
+
+<input 
+type="number"
+name="area"
+placeholder="Example: 1500"
+required>
+
+
+
+
+<label>Number of Bedrooms</label>
+
+<select name="bedrooms">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+
+</select>
+
+
+
+
+<label>Number of Bathrooms</label>
+
+<select name="bathrooms">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+
+</select>
+
+
+
+
+<label>Number of Floors</label>
+
+<select name="floors">
+
+<option>1</option>
+<option>2</option>
+
+</select>
+
+
+
+
+<label>Material Quality</label>
+
+<select name="material">
+
+<option>Basic</option>
+<option>Standard</option>
+<option>Premium</option>
+
+</select>
+
+
+
+
+<label>Interior Type</label>
+
+<select name="interior">
+
+<option>Normal</option>
+<option>Modern</option>
+<option>Luxury</option>
+
+</select>
+
+
+
+
+<label>Parking</label>
+
+<select name="parking">
+
+<option>Yes</option>
+<option>No</option>
+
+</select>
+
+
+
+
+<label>Balcony</label>
+
+<select name="balcony">
+
+<option>Yes</option>
+<option>No</option>
+
+</select>
+
+
+
+
+<label>Garden</label>
+
+<select name="garden">
+
+<option>Yes</option>
+<option>No</option>
+
+</select>
+
+
+
+
+
+<button type="submit">
+
+🚀 Predict Cost & Design Home
+
+</button>
+
+
+
+</form>
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- ===============================
+        VASTU FORM
+================================ -->
+
+
+<h2>🧭 Vastu Analysis</h2>
+
+
+
+<form action="/vastu" method="POST">
+
+
+
+
+
+<label>
+Main Entrance Direction
+</label>
+
+
+<select name="entrance">
+
+
+<option>North</option>
+
+<option>East</option>
+
+<option>South</option>
+
+<option>West</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Kitchen Direction
+</label>
+
+
+<select name="kitchen">
+
+
+<option>South-East</option>
+
+<option>North-West</option>
+
+<option>North-East</option>
+
+<option>West</option>
+
+
+</select>
+
+
+
+
+
+
+<label>
+Master Bedroom Direction
+</label>
+
+
+<select name="bedroom">
+
+
+<option>South-West</option>
+
+<option>North</option>
+
+<option>East</option>
+
+<option>West</option>
+
+
+</select>
+
+
+
+
+
+
+<label>
+Pooja Room Direction
+</label>
+
+
+<select name="pooja">
+
+
+<option>North-East</option>
+
+<option>East</option>
+
+<option>West</option>
+
+<option>South</option>
+
+
+</select>
+
+
+
+
+
+
+<label>
+Bathroom Direction
+</label>
+
+
+<select name="bathroom">
+
+
+<option>North-West</option>
+
+<option>West</option>
+
+<option>North-East</option>
+
+<option>South-East</option>
+
+
+</select>
+
+
+
+
+
+
+<button type="submit">
+
+🧭 Check Vastu
+
+</button>
+
+
+
+</form>
+
+
+
+
+</div>
+
+
+</body>
+
+</html>
