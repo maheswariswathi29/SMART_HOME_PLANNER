@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home Planner</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Segoe UI,sans-serif;
+    background:#f4f6f9;
+}
+
+.header{
+    background:#2c3e50;
+    color:white;
+    padding:18px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.room-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.room{
+    background:#3498db;
+    color:white;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.room:hover{
+    background:#2980b9;
+    transform:scale(1.05);
+}
+
+.selected{
+    background:#27ae60 !important;
+}
+
+#selectedRooms{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+Smart Home Planner
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<label>House Type</label>
+
+<select id="houseType">
+<option>1 BHK</option>
+<option>2 BHK</option>
+<option>3 BHK</option>
+<option>Villa</option>
+<option>Custom House</option>
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>Select Rooms</h2>
+
+<div class="room-list">
+
+<div class="room" onclick="selectRoom(this)">Living Room</div>
+
+<div class="room" onclick="selectRoom(this)">Bedroom</div>
+
+<div class="room" onclick="selectRoom(this)">Kitchen</div>
+
+<div class="room" onclick="selectRoom(this)">Bathroom</div>
+
+<div class="room" onclick="selectRoom(this)">Dining Room</div>
+
+<div class="room" onclick="selectRoom(this)">Balcony</div>
+
+<div class="room" onclick="selectRoom(this)">Study Room</div>
+
+<div class="room" onclick="selectRoom(this)">Parking</div>
+
+<div class="room" onclick="selectRoom(this)">Garden</div>
+
+</div>
+
+<div id="selectedRooms">
+
+<b>Selected Rooms :</b>
+
+<span id="output">None</span>
+
+</div>
+
+</div>
+
+<button onclick="nextPage()"
+style="padding:15px 40px;
+background:#27ae60;
+color:white;
+border:none;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;">
+
+Next →
+
+</button>
+
+</div>
+
+<script>
+
+let rooms=[];
+
+function selectRoom(box){
+
+let room=box.innerText;
+
+if(box.classList.contains("selected")){
+
+box.classList.remove("selected");
+
+rooms=rooms.filter(r=>r!==room);
+
+}
+else{
+
+box.classList.add("selected");
+
+rooms.push(room);
+
+}
+
+document.getElementById("output").innerHTML=rooms.join(", ");
+
+}
+
+function nextPage(){
+
+alert("Next Page : Furniture Selection");
+
+}
+
+</script>
+
+</body>
+</html>
